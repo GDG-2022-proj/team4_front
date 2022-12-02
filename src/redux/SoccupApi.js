@@ -6,13 +6,13 @@ import { API_URL } from '../utils/constants/Config';
 export const getSearchData = createAsyncThunk(
   'Slice/getData',
   async (name) => {
-    const resp = await axios.post( API_URL + "/player/?name=",
-    {name: name},
+    const resp = await axios.get( API_URL + "/player/?name=" + {name},
     {
       headers: {
         "Content-Type" : `application/json`,
       },
     });
+    console.log(name)
     return resp.data
   }
 );

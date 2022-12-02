@@ -1,12 +1,12 @@
 import React from 'react'
 import { useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom'; 
+// import { useParams } from 'react-router-dom'; 
 // style
 import '../styles/detail.scss';
 
 const Detail = () => {
-  const params = useParams();
-  console.log(params)
+  // const params = useParams();
+  // console.log(params)
 
   const playerDetail = useSelector(state => console.log(state));
 
