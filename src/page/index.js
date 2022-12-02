@@ -1,17 +1,23 @@
 import React from 'react'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+// style
+import '../styles/body.scss';
+import '../styles/reset.scss';
+import Detail from './Detail';
+// components
+import Main from './Main';
+import img from '../assets/logo.png';
 
 const index = () => {
   return (
-    <div>
-      test 
-      {/*make flexbox*/}
-      <div className="flexbox">
-        <div className="flexbox__item">1</div>
-        <div className="flexbox__item">2</div>
-        <div className="flexbox__item">3</div>
-      </div>
-
-      
+    <div className='main'>
+      <BrowserRouter>
+        <h1 className='logo'><img src={img} alt='logo'/></h1>
+        <Routes>
+          <Route path="/" element={<Main/>} />
+          <Route path="/detail" element={<Detail/>} />
+        </Routes>
+      </BrowserRouter>
     </div>
   )
 }
