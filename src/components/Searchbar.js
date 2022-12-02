@@ -5,7 +5,7 @@ import { getSearchData } from '../redux/SoccupApi';
 import '../styles/searchbar.scss';
 
 const Searchbar = () => {
-  const dispatch = useDispatch();
+  let dispatch = useDispatch();
   const [ keyword, setKeyword ] = useState(''); 
 
   let inputValue;
@@ -16,7 +16,7 @@ const Searchbar = () => {
 
   const onEnter = (e) => {
     if (e.key === 'Enter') {
-      console.log(keyword)
+      // console.log(keyword)
       dispatch(getSearchData(keyword));
     }
   }
