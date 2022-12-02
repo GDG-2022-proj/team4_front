@@ -8,13 +8,15 @@ import Detail from './Detail';
 import Main from './Main';
 import img from '../assets/logo.png';
 import Searchbar from '../components/Searchbar';
+import Imagebox from '../components/Imagebox';
 
 const index = () => {
   return (
     <div className='main'>
       <BrowserRouter>
-        <h1 className='logo'><img src={img} alt='logo' onClick={() => {}}/></h1>
+        <h1 className='logo'><img src={img} alt='logo'/></h1>
         <Searchbar/>
+        <Imagebox/>
         <Routes>
           <Route path="/" element={<Main/>} />
           <Route path="/detail/:id" element={<Detail/>} />
