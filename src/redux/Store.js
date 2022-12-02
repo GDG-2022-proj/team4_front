@@ -3,12 +3,13 @@ import Slice from './Slice';
 
 const store = configureStore({
   reducer: {
-    searchKeyword: Slice.reducer
+    searchKeyword: Slice.reducer,
+    readAllPlayer: Slice.reducer
   }, 
   middleware: getDefaultMiddleware => 
-  getDefaultMiddleware({
-    serializableCheck: false,
-  })
+    getDefaultMiddleware({
+      serializableCheck: false,
+    })
 });
 
 

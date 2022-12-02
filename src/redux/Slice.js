@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { getSearchData } from './SoccupApi';
+import { getSearchData, getAllPlayer } from './SoccupApi';
 
 const Slice = createSlice({
   name: 'Slice',
@@ -8,12 +8,12 @@ const Slice = createSlice({
     searchKeyword: (state, action) => {
       state.value[0] = action.payload;
     },
-    test: (state, action) => {
-      state.value[1] = action.payload;
-    },
+    readAllPlayer: (state, aciton) => {
+      state.value[1] = aciton.payload;
+    }
   },
   extraReducers: (builder) => {   // 비동기적인 action
-    // 무슨 api일까요....?
+    // 선수 상세페이지
     builder.addCase(getSearchData.pending, (state, action) => {
       state.status = 'Loading';
     })
@@ -22,6 +22,17 @@ const Slice = createSlice({
       state.status = 'complete';
     })
     builder.addCase(getSearchData.rejected, (state, action) => {
+      state.status = 'fail';
+    })
+    // 모든 선수 정보 가져오기
+    builder.addCase(getAllPlayer.pending, (state, action) => {
+      state.status = 'Loading';
+    })
+    builder.addCase(getAllPlayer.fulfilled, (state, action) => {
+      state.value[0] = action.payload;
+      state.status = 'complete';
+    })
+    builder.addCase(getAllPlayer.rejected, (state, action) => {
       state.status = 'fail';
     })
   }

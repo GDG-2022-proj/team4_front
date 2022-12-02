@@ -10,10 +10,11 @@ import Searchbar from '../components/Searchbar';
 import img from '../assets/logo.png';
 
 const index = () => {
+  
   return (
     <div className='main'>
       <BrowserRouter>
-        <h1 className='logo'><img src={img} alt='logo'/></h1>
+        <h1 className='logo' onClick={() => {}}><img src={img} alt='logo'/></h1>
         <Searchbar/>
         <Routes>
           <Route path="/" element={<Main/>} />

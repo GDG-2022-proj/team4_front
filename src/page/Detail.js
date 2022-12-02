@@ -1,14 +1,11 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import axios from 'axios';
 import { useSelector } from 'react-redux';
-// import { useParams } from 'react-router-dom'; 
 // style
 import '../styles/detail.scss';
 
 const Detail = () => {
-  // const params = useParams();
-  // console.log(params)
-
-  const playerDetail = useSelector(state => console.log(state));
+  const playerDetail = useSelector(state => console.log(state.searchKeyword));
 
   return (
     <div className='detail'>
