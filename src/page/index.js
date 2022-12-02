@@ -6,7 +6,7 @@ import '../styles/reset.scss';
 import Detail from './Detail';
 // components
 import Main from './Main';
-import img from '../assets/logo.jpg';
+import img from '../assets/logo.png';
 
 const index = () => {
   return (
