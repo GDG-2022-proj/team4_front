@@ -3,7 +3,7 @@ import Slice from './Slice';
 
 const store = configureStore({
   reducer: {
-    test: Slice.reducer
+    searchKeyword: Slice.reducer
   }, 
   middleware: getDefaultMiddleware => 
   getDefaultMiddleware({
